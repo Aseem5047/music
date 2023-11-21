@@ -78,12 +78,14 @@ const TopPlay = () => {
 			className="xl:ml-6 ml-0 xl:mb-0 mb-6 flex-1 xl:max-w-[500px] pl-2 max-w-full flex flex-col "
 		>
 			<div className="w-full flex flex-col">
-				<div className="flex flex-row justify-between items-center">
-					<h2 className="text-white font-bold text-2xl">Top Charts</h2>
-					<Link to="/top-charts">
-						<p className="text-gray-300 text-base cursor-pointer">See more</p>
-					</Link>
-				</div>
+				{topPlays?.length > 0 && (
+					<div className="flex flex-row justify-between items-center">
+						<h2 className="text-white font-bold text-2xl">Top Charts</h2>
+						<Link to="/top-charts">
+							<p className="text-gray-300 text-base cursor-pointer">See more</p>
+						</Link>
+					</div>
+				)}
 
 				<div className="mt-4 flex flex-col gap-1">
 					{topPlays?.map((song, i) => (
@@ -101,12 +103,14 @@ const TopPlay = () => {
 			</div>
 
 			<div className="w-full hidden xl:flex flex-col mt-8 ">
-				<div className="flex flex-row justify-between items-center">
-					<h2 className="text-white font-bold text-2xl">Top Artists</h2>
-					<Link to="/top-artists">
-						<p className="text-gray-300 text-base cursor-pointer">See more</p>
-					</Link>
-				</div>
+				{topPlays?.length > 0 && (
+					<div className="flex flex-row justify-between items-center">
+						<h2 className="text-white font-bold text-2xl">Top Artists</h2>
+						<Link to="/top-artists">
+							<p className="text-gray-300 text-base cursor-pointer">See more</p>
+						</Link>
+					</div>
+				)}
 
 				<Swiper
 					slidesPerView="auto"
